@@ -5,3 +5,11 @@ body {
   @extend %font-standard;
   @include font();
 }
+.wrapper {
+  margin: 0 10px;
+}
+
+.train-color {
+  background: linear-gradient(-120deg, $primary-train-color, $second-train-color)
+}
+

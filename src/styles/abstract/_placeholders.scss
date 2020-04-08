@@ -1,3 +1,9 @@
 %font-standard {
   font-family: 'Inconsolata', Verdana, sans-serif;
 }
+%game-horizontal-gradient {
+  background: linear-gradient(-120deg, $primary-game-color, $second-game-color)
+}
+%game-vertical-gradient {
+  background: linear-gradient(180deg, $primary-game-color, $second-game-color)
+}

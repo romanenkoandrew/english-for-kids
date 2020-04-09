@@ -5,5 +5,8 @@
   background: linear-gradient(-120deg, $primary-game-color, $second-game-color)
 }
 %game-vertical-gradient {
-  background: linear-gradient(180deg, $primary-game-color, $second-game-color)
+  background: linear-gradient(180deg, $primary-game-color, $second-game-color 40%, $color-white 0)
+}
+%transition {
+  transition: all 0.3s ease-in-out;
 }

@@ -9,7 +9,10 @@ body {
   margin: 0 10px;
 }
 
-.train-color {
+.train-color-horizontal {
   background: linear-gradient(-120deg, $primary-train-color, $second-train-color)
+}
+.train-color-vertical {
+  background: linear-gradient(180deg, $primary-train-color, $second-train-color 40%, $color-white 0)
 }
 

@@ -13,18 +13,27 @@
   margin: 10px;
   text-decoration: none;
   color: $text-color;
-  box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
-    &:hover {
-      box-shadow: 0 10px 20px rgba(0,0,0,.4);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  &:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    img {
+      border: 10px solid $primary-game-color;
     }
+    p {
+      color: $primary-game-color;
+    }
+  }
   img {
+    @extend %transition;
     width: 140px;
     height: 140px;
     border-radius: 50%;
     border: 10px solid $color-white;
     margin: 20px 0;
+    object-fit: cover;
   }
   p {
+    @extend %transition;
     padding-top: 20px;
   }
 }

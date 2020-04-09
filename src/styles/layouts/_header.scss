@@ -7,26 +7,55 @@
 }
 .navigation {
   position: relative;
-}
-.switch-menu {
   input {
     position: absolute;
     width: 40px;
     height: 40px;
     top: -7px;
-    opacity: 0.5;
+    opacity: 0;
     z-index: 3;
     cursor: pointer;
+    &:checked + label > div > .bar1{
+        transform: rotate(45deg);
+        height: 3px;
+        width: 42px;
+      }
+    &:checked + label > div > .bar2{
+      background-color: transparent;
+        height: 3px;
+        width: 42px;
+      }
+    &:checked + label > div > .bar3{
+        transform: rotate(-45deg);
+        height: 3px;
+        width: 42px;
+      }
+    }
   }
-  span {
+  .switch-menu {
+  position: relative;
+  width: 38px;
+  height: 32px;
+  z-index: 2;
+    span {
+    position: absolute;
     display: block;
-    position: relative;
     width: 38px;
     height: 5px;
     background: #cdcdcd;
     border-radius: 3px;
-    margin-bottom: 5px;
-    z-index: 2;
+    @extend %transition;
+    &.bar1 {
+      top: 0;
+      transform-origin: 5%;
+    }
+    &.bar2 {
+      top: 13.5px;
+    }
+    &.bar3 {
+      bottom: 0;
+      transform-origin: 5%;
+    }
   }
 }
 
@@ -38,21 +67,41 @@
   width: 380px;
   height: calc(100vh + 100px);
   color: $color-white;
-  padding: 150px 50px 50px 150px;
+  padding: 150px 30px 50px 130px;
   top: -100px;
-  left: -100px;
+  left: -470px;
   z-index: 1;
-  
+  animation: 0.7s ease-in-out forwards;
   a {
     color: $color-white;
     text-decoration: none;
-    cursor: pointer;
     margin-bottom: 15px;
-    
+    cursor: pointer;
+    @extend %transition;
+    &.active {
+      color: $menu-active-color;
+      text-decoration: underline;
+    }
+      &:hover {
+        color: $primary-game-color;
+      }
   }
 }
-.hidden {
-  display: none;
+@keyframes menu-right {
+  from {
+    left: -470px;
+  }
+  to {
+    left: -88px
+  }
+}
+@keyframes menu-left {
+  from {
+    left: -88px;
+  }
+  to {
+    left: -470px
+  }
 }
 .switch-mode-container {
   @extend %game-horizontal-gradient;
@@ -67,10 +116,9 @@
   cursor: pointer;
     &:hover {
       box-shadow: 0 0 10px rgba(0,0,0,0.5);;
-
     }
   
-  .switch-mode {
+  .switch-mode-text {
     @include font(2rem, 700);
     position: absolute;
     text-transform: uppercase;
@@ -87,7 +135,7 @@
     } 
   }
 
-  .switch-handle {
+  .switch-handler {
     position: absolute;
     width: 32px;
     height: 32px;
@@ -95,6 +143,7 @@
     border-radius: 3px;
     left: 80px;
     @extend %transition;
+    animation: 0.5s ease-in-out forwards;
     &::after {
       content: '';
       position: absolute;
@@ -110,6 +159,22 @@
       content: '';
       left: 0px;
     }
+  }
+}
+@keyframes switch-handler-left {
+  from {
+    left: 80px;
+  }
+  to {
+    left: 5px;
+  }
+}
+@keyframes switch-handler-right {
+  from {
+    left: 5px;
+  }
+  to {
+    left: 80px;
   }
 }
 

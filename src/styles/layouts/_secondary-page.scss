@@ -1,5 +1,5 @@
 .container {
-  @include flex();
+  @include flex(wrap);
 }
 .stars {
   width: 100%;
@@ -52,4 +52,21 @@
   &:hover {
     background-image: url(/src/assets/img/rotateHover.svg);
   }
+}
+.button {
+  width: 630px;
+  height: 50px;
+  @extend %game-horizontal-gradient;
+  @include font(2.5rem, 700);
+  @include flex();
+  border-radius: 20px;
+  color: $color-white;
+  margin: 20px 0;
+  @media only screen and (max-width: 677px) {
+    width: 300px;
+    }
+}
+
+.hidden {
+  display: none;
 }

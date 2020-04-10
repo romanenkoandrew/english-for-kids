@@ -1,6 +1,9 @@
 .container {
   @include flex();
-  margin-top: 30px;
+
+}
+.main-page-container {
+  margin-top: 50px;
 }
 
 .main-card {

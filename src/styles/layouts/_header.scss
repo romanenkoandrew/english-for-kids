@@ -104,6 +104,24 @@
   }
 }
 .switch-mode-container {
+  position: relative;
+  input {
+    opacity: 0;
+    position: absolute;
+    &:checked + label > .switch-handler {
+      left: 5px;
+    }
+    &:checked + label > .switch-mode-text {
+      &::before {
+        opacity: 0;
+      }
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+}
+.switch-mode-label {
   @extend %game-horizontal-gradient;
   @extend %transition;
   display: inline-block;
@@ -117,7 +135,6 @@
     &:hover {
       box-shadow: 0 0 10px rgba(0,0,0,0.5);;
     }
-  
   .switch-mode-text {
     @include font(2rem, 700);
     position: absolute;
@@ -125,13 +142,13 @@
     color: $color-white;
     padding-top: 6px;
     &::before {
-      padding-left: 7px;
+      padding-left: 5px;
       content: 'train';
     } 
     &::after {
       content: 'play';
       opacity: 0;
-      padding-left: 10px;
+      padding-left: 5px;
     } 
   }
 
@@ -161,22 +178,22 @@
     }
   }
 }
-@keyframes switch-handler-left {
-  from {
-    left: 80px;
-  }
-  to {
-    left: 5px;
-  }
-}
-@keyframes switch-handler-right {
-  from {
-    left: 5px;
-  }
-  to {
-    left: 80px;
-  }
-}
+// @keyframes switch-handler-left {
+//   from {
+//     left: 80px;
+//   }
+//   to {
+//     left: 5px;
+//   }
+// }
+// @keyframes switch-handler-right {
+//   from {
+//     left: 5px;
+//   }
+//   to {
+//     left: 80px;
+//   }
+// }
 
 
 

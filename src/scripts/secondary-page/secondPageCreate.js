@@ -6,7 +6,6 @@ const secondPageCreate = () => {
   document.addEventListener('click', event => {
     // event.preventDefault()
     const target = event.target
-    console.log(target.parentElement.classList)
     if (target.classList.contains('main-card') || 
     target.parentElement.classList.contains('main-card') || 
     target.classList.contains('menu-item'))

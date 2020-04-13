@@ -1,18 +1,16 @@
 const rotateCard = () => {
   const container = document.querySelector('.container')
-  const cards = container.querySelectorAll('.secondary-card')
-  const rotate = container.querySelector('.rotate')
-
-  cards.forEach(el => {
-    el.addEventListener('click', event => {
-      if (event.target === rotate) {
-        el.classList.add('translate')
-      }
-    })
-    el.addEventListener('mouseout', event => {
-      if (event.target !== el) {
-        el.classList.remove('translate')
-      }
+  container.addEventListener('click', event => {
+    const target = event.target
+    const parentTarget = event.target.parentElement
+    if (target.classList.contains('rotate')) {
+      parentTarget.classList.add('translate')
+    }
+    console.log(parentTarget)
+    parentTarget.addEventListener('mouseleave', (el) => {
+        if (el.target !== el) {
+          parentTarget.classList.remove('translate')
+        }
     })
   })
 }

@@ -11,7 +11,7 @@ console.log(cards)
 document.addEventListener('DOMContentLoaded', () => {
   dataChange()
   switchMode()
-  menuActive()
+  // menuActive()
   menuToggle()
   rotateCard()
   gameModeOn()

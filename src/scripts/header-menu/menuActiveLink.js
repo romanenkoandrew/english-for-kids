@@ -1,10 +1,8 @@
-const menuActive = () => {
+const menuActive = (option) => {
   const menu = document.getElementById('menu')
   const menuLinks = menu.querySelectorAll('a')
-  menu.addEventListener('click', event => {
-    // event.preventDefault()
+    const linkindex = option + 1
     menuLinks.forEach(el => el.classList.remove('active'))
-    event.target.classList.add('active')
-  })
+    menuLinks[linkindex].classList.add('active')
 }
 export default menuActive

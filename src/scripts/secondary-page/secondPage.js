@@ -8,8 +8,12 @@ class SecondPage {
   }
 
   init() {
-    console.log(cards[this.index])
     const container = document.querySelector('.container')
+    const linkArr = container.querySelectorAll('a')
+    linkArr.forEach(el => container.removeChild(el))
+    const cardsArr = container.querySelectorAll('div')
+    cardsArr.forEach(el => el.remove())
+    container.classList.remove('main-page-container')
     const stars = document.createElement('div')
     stars.classList.add('stars')
     container.appendChild(stars)
@@ -17,7 +21,7 @@ class SecondPage {
       new Card(el)
     })
     const button = document.createElement('div')
-    button.classList.add('button hidden')
+    button.classList.add('button', 'hidden')
     button.innerText = 'Start game'
     container.appendChild(button)
   }

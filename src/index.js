@@ -3,5 +3,3 @@ import '../index.html'
 import './scripts'
 
 // import a from './scripts'
-
-// import './assets/images/angry.jpg'

@@ -25,6 +25,19 @@ module.exports = {
           }
         ]
       },
+      //  mp3
+      {
+        test: /.(mp3)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'assets/audio'
+            }
+          }
+        ]
+      },
       {
         test: /\.html$/,
         use: [
@@ -49,14 +62,3 @@ module.exports = {
     ]
   }
 }
-
-// {
-//   test: /.(mp3)$/,
-//   use: [{
-//     loader: 'file-loader',
-//     options: {
-//       outputPath: 'audio',
-//       name: '[name].[ext]'
-//     }
-//   }]
-// }

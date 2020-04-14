@@ -23,7 +23,9 @@ class SecondPage {
     const button = document.createElement('div')
     button.classList.add('button', 'hidden')
     button.innerText = 'Start game'
-    container.appendChild(button)
+    const audio = document.createElement('audio')
+    audio.id = 'audio'
+    container.append(button, audio)
   }
 }
 

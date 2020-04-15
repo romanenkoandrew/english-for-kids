@@ -3,7 +3,7 @@
 
 }
 .main-page-container {
-  margin-top: 50px;
+  margin-top: 80px;
 }
 
 .main-card {
@@ -20,10 +20,10 @@
   &:hover {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
     img {
-      border: 10px solid $primary-game-color;
+      border: 10px solid $hover-color;
     }
     p {
-      color: $primary-game-color;
+      color: $hover-color;
     }
   }
   img {

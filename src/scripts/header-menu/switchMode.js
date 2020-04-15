@@ -1,16 +1,15 @@
-import data from '../data'
+import saveLS from '../localStorage/saveLS'
 
 const switchMode = () => {
-  const switchModeLabel = document.getElementById('switchMode')
-
-  switchModeLabel.addEventListener('click', () => {
-    if (!data.game) {
-      data.game = true
-      localStorage.setItem('game', data.game)
-    } else {
-      data.game = false
-      localStorage.setItem('game', data.game)
+  const switchModeInput = document.getElementById('switch-mode')
+  switchModeInput.addEventListener('change', () => {
+    if (switchModeInput.checked) {
+      saveLS({ gameModeOn: true })
+    } 
+    if (!switchModeInput.checked) {
+      saveLS({ gameModeOn: false })
     }
   })
+
 }
 export default switchMode

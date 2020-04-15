@@ -1,6 +1,5 @@
 class Card {
   constructor(option) {
-    // console.log(option)
     this.word = option.word
     this.translation = option.translation
     this.image = option.image

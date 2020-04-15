@@ -14,6 +14,7 @@ class SecondPage {
     const cardsArr = container.querySelectorAll('div')
     cardsArr.forEach(el => el.remove())
     container.classList.remove('main-page-container')
+    container.classList.add('second-page-container')
     const stars = document.createElement('div')
     stars.classList.add('stars')
     container.appendChild(stars)

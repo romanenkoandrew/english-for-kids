@@ -1,4 +1,6 @@
 const path = require('path')
+const HTMLWebpackPlugin = require('html-webpack-plugin')
+const CopyPlugin = require('copy-webpack-plugin')
 
 module.exports = {
   entry: './src/index.js',
@@ -6,6 +8,15 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
   },
+  plugins: [
+    new HTMLWebpackPlugin({
+      template: './index.html'
+    }),
+    new CopyPlugin([{
+      from: './src/assets',
+      to: './assets'
+    }])
+  ],
   module: {
     rules: [
       {
@@ -38,14 +49,14 @@ module.exports = {
           }
         ]
       },
-      {
-        test: /\.html$/,
-        use: [
-          'file-loader?name=[path][name].[ext]',
-          'extract-loader',
-          'html-loader'
-        ]
-      },
+      // {
+      //   test: /\.html$/,
+      //   use: [
+      //     'file-loader?name=[path][name].[ext]',
+      //     'extract-loader',
+      //     'html-loader'
+      //   ]
+      // },
       // fonts
       {
         test: /.(ttf|otf|eot|woff(2)?)(\?[a-z0-9]+)?$/,

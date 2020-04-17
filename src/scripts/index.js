@@ -1,5 +1,4 @@
 import cards from '../assets/cards'
-import image from '../assets/image&mp3'
 import menuToggle from './header-menu/menuOpen'
 import switchMode from './header-menu/switchMode'
 import rotateCard from './secondary-page/rotateCard'

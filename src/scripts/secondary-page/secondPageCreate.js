@@ -7,18 +7,16 @@ import gameModeMainPage from '../game/gameModeMainPage'
 
 const secondPageCreate = () => {
   document.addEventListener('click', event => {
-    // event.preventDefault()
     const LS = getLS()
     const { gameModeOn } = LS
     const { target } = event
     if (
-      target.classList.contains('main-card') ||
-      target.parentElement.classList.contains('main-card') ||
-      target.classList.contains('menu-item')
-    ) {
+      target.closest('a')
+      ) {
+      const category = target.closest('a').innerText.trim()
       let linkIndex
       cards[0].forEach((el, index) => {
-        if (el === target.parentElement.innerText || el === target.innerText) {
+        if (el === category) {
           linkIndex = index
         }
       })

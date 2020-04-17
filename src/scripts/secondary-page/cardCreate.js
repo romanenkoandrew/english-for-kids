@@ -13,7 +13,7 @@ class Card {
     card.classList.add('secondary-card')
     const front = document.createElement('div')
     front.classList.add('front')
-    front.style.backgroundImage = `url(/src/assets/${this.image})`
+    front.style.backgroundImage = `url(assets/${this.image})`
     const cardText = document.createElement('div')
     cardText.classList.add('card-text')
     cardText.innerText = this.word
@@ -21,7 +21,7 @@ class Card {
 
     const back = document.createElement('div')
     back.classList.add('back')
-    back.style.backgroundImage = `url(/src/assets/${this.image})`
+    back.style.backgroundImage = `url(assets/${this.image})`
     const cardTextTranslate = document.createElement('div')
     cardTextTranslate.classList.add('card-text-translate')
     cardTextTranslate.innerText = this.translation

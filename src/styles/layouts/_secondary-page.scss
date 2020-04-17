@@ -63,11 +63,11 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: 36px;
-  background-image: url(/src/assets/img/rotate.svg);
+  background-image: url(../assets/img/rotate.svg);
   @extend %transition;
   backface-visibility: hidden;
   &:hover {
-    background-image: url(/src/assets/img/rotateHover.svg);
+    background-image: url(../assets/img/rotateHover.svg);
   }
 }
 .button {

@@ -2,8 +2,8 @@ import getLS from "../localStorage/getLS"
 
 const playAudioTrain = (audioSrc) => {
   const audio = document.getElementById('audio')
-  audio.src = `/dist/assets/audio/${audioSrc}.mp3`
-  audio.play()
+  audio.src = `assets/audio/${audioSrc}.mp3`
+  audio.play().catch(e => e)
 }
 const audioTrain = () => {
   const LS = getLS()

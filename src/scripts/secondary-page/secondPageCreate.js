@@ -4,6 +4,7 @@ import menuActive from '../header-menu/menuActiveLink'
 import getLS from '../localStorage/getLS'
 import gameModeSecondPage from '../game/gameModeSecondPage'
 import gameModeMainPage from '../game/gameModeMainPage'
+import gameStart from '../game/gameStart'
 
 const secondPageCreate = () => {
   document.addEventListener('click', event => {
@@ -28,6 +29,7 @@ const secondPageCreate = () => {
         gameModeSecondPage()
         gameModeMainPage()
       }
+      gameStart()
     }
   })
 }

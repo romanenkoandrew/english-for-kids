@@ -9,7 +9,7 @@ import defaultLS from './localStorage/defaultLS'
 
 document.addEventListener('DOMContentLoaded', () => {
   defaultLS()
-  switchMode()
+  // switchMode()
   menuToggle()
   rotateCard()
   secondPageCreate()

@@ -7,7 +7,10 @@ const switchMode = () => {
       saveLS({ gameModeOn: true })
     } 
     if (!switchModeInput.checked) {
-      saveLS({ gameModeOn: false })
+      saveLS({ 
+        gameModeOn: false,
+        gameStart: false,
+       })
     }
   })
 

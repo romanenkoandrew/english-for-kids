@@ -4,7 +4,8 @@ const defaultLS = () => {
   window.addEventListener('beforeunload', () => {
     saveLS({ 
       gameModeOn: false,
-      mainPage: true
+      mainPage: true,
+      gameStart: false
     })
   })
 }

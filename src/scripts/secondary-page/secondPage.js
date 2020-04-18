@@ -21,12 +21,15 @@ class SecondPage {
     cards[this.index].forEach(el => {
       new Card(el)
     })
-    const button = document.createElement('div')
+    const button = document.createElement('button')
     button.classList.add('button', 'hidden')
     button.innerText = 'Start game'
+    const buttons = document.createElement('div')
+    buttons.classList.add('buttons')
+    buttons.appendChild(button)
     const audio = document.createElement('audio')
     audio.id = 'audio'
-    container.append(button, audio)
+    container.append(buttons, audio)
   }
 }
 

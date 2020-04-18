@@ -1,4 +1,5 @@
 import mainPage from "./mainPage"
+import saveLS from "../localStorage/saveLS"
 
 const menuActive = option => {
   const menu = document.getElementById('menu')
@@ -7,5 +8,6 @@ const menuActive = option => {
   menuLinks.forEach(el => el.classList.remove('active'))
   menuLinks[linkindex].classList.add('active')
   mainPage()
+  saveLS({ gameStart: false })
 }
 export default menuActive

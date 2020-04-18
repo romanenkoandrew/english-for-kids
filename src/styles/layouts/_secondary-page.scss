@@ -70,8 +70,13 @@
     background-image: url(../assets/img/rotateHover.svg);
   }
 }
+.buttons{
+  width: 100%;
+  @include flex()
+}
 .button {
-  width: 630px;
+  width: 100%;
+  max-width: 630px;
   height: 50px;
   @extend %game-horizontal-gradient;
   @include font(2.5rem, 700);
@@ -83,6 +88,15 @@
   @media only screen and (max-width: 677px) {
     width: 300px;
     }
+}
+
+.button-repeat {
+  width: 70px;
+  border-radius: 50%;
+  background-image: url(../assets/img/repeat.svg), linear-gradient(-120deg, $primary-game-color, $second-game-color);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 32px 32px, cover;
 }
 
 .hidden {

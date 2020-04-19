@@ -37,7 +37,7 @@ const game = () => {
     error()
     if (target !== button) {
       createStar(false)
-      setTimeout(playAudio, 1000, wordsArr[lastWord])
+      setTimeout(playAudio, 1500, wordsArr[lastWord])
     }
   }
   if (target === button) {
@@ -52,7 +52,7 @@ const game = () => {
       target.classList.add('success')
       wordsArr.pop()
       lastWord = wordsArr.length - 1
-      setTimeout(playAudio, 1000, wordsArr[lastWord])
+      setTimeout(playAudio, 1500, wordsArr[lastWord])
     } else {
       target.classList.add('success')
       setTimeout(gameEnd, 500)

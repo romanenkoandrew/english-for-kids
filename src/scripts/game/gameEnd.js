@@ -27,7 +27,7 @@ const gameEnd = () => {
     resultText.classList.add('win-text')
     resultText.innerText = 'Win!!!'
     img.src = 'assets/img/success.jpg'
-    setTimeout(playAudio, 500, 'success')
+    setTimeout(playAudio, 1000, 'success')
   }
 
   if (counterErrors) {
@@ -39,7 +39,7 @@ const gameEnd = () => {
     if (counterErrors > 1) {
       resultText.innerText = `${counterErrors} errors!!!`
     }
-    playAudio('failure')
+    setTimeout(playAudio, 1000, 'failure')
   }
   scrollTo(0, 0)
   result.append(resultText, img)

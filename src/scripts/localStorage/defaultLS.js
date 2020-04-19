@@ -1,12 +1,11 @@
 import saveLS from './saveLS'
 
 const defaultLS = () => {
-  window.addEventListener('beforeunload', () => {
-    saveLS({
-      gameModeOn: false,
-      mainPage: true,
-      gameStart: false
-    })
+  saveLS({
+    gameModeOn: false,
+    mainPage: true,
+    gameStart: false,
+    firstTime: true
   })
 }
 export default defaultLS

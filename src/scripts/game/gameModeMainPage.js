@@ -1,7 +1,7 @@
 import getLS from '../localStorage/getLS'
 
 const gameModeMainPage = () => {
-  const { gameModeOn, mainPage } = getLS()
+  const { gameModeOn, mainPage, firstTime } = getLS()
   const verticalColorChange = document.querySelectorAll('.main-card')
 
   const menu = document.getElementById('menu')
@@ -19,9 +19,11 @@ const gameModeMainPage = () => {
     }
   }
   if (!gameModeOn) {
-    horizontalColorChangeArr.forEach(el =>
-      el.classList.add('train-color-horizontal')
-    )
+    if (!firstTime) {
+      horizontalColorChangeArr.forEach(el =>
+        el.classList.add('train-color-horizontal')
+      )
+    }
     if (mainPage) {
       verticalColorChangeArr.forEach(el =>
         el.classList.add('train-color-vertical')

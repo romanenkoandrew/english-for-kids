@@ -11,9 +11,7 @@ const secondPageCreate = () => {
     const LS = getLS()
     const { gameModeOn } = LS
     const { target } = event
-    if (
-      target.closest('a')
-      ) {
+    if (target.closest('a')) {
       const category = target.closest('a').innerText.trim()
       let linkIndex
       cards[0].forEach((el, index) => {
@@ -23,13 +21,13 @@ const secondPageCreate = () => {
       })
       new SecondPage(linkIndex)
       menuActive(linkIndex)
+      gameStart()
       if (gameModeOn) {
         const switchModeInput = document.getElementById('switch-mode')
         switchModeInput.checked = true
         gameModeSecondPage()
         gameModeMainPage()
       }
-      gameStart()
     }
   })
 }

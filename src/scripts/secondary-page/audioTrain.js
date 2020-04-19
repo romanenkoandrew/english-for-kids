@@ -1,10 +1,7 @@
 import getLS from "../localStorage/getLS"
+import playAudio from "./playAudio"
 
-const playAudioTrain = (audioSrc) => {
-  const audio = document.getElementById('audio')
-  audio.src = `assets/audio/${audioSrc}.mp3`
-  audio.play().catch(e => e)
-}
+
 const audioTrain = () => {
   const LS = getLS()
   const { gameModeOn } = LS
@@ -13,7 +10,7 @@ const audioTrain = () => {
   !target.classList.contains('rotate') &&
   !target.classList.contains('back') && 
   !gameModeOn) {
-    playAudioTrain(target.innerText)
+    playAudio(target.innerText)
   }
 }
 const audioTrainHandler = () => {

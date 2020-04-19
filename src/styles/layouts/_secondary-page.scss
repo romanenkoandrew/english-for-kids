@@ -1,12 +1,12 @@
-.container {
-  @include flex(wrap);
-}
 .second-page-container {
   margin-top: 35px;
 }
 .stars {
+  @include flex(nowrap, row, flex-end);
   width: 100%;
+  max-width: 1350px;
   height: 50px;
+  overflow: hidden;
 }
 
 .secondary-card {
@@ -97,6 +97,9 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: 32px 32px, cover;
+  @media only screen and (max-width: 677px) {
+    width: 300px;
+    }
 }
 
 .hidden {
@@ -106,4 +109,31 @@
   font-size: 0;
   padding: 0;
   margin: 0;
+}
+
+.success { 
+  opacity: 0.5;
+}
+
+.result {
+  @include flex(nowrap, column);
+  max-width: 1350px;
+  width: 100%;
+  margin: auto;
+  height: 100vh;
+  @media only screen and (max-width: 677px) {
+    img {
+      width: 300px;
+    }
+  }
+}
+.win-text, .lose-text {
+  @include font(5rem, 700);
+  margin-bottom: 20px;
+}
+.win-text {
+  color: $second-train-color;
+}
+.lose-text {
+  color: $primary-game-color;
 }

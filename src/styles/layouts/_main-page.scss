@@ -1,6 +1,7 @@
 .container {
   @include flex();
-
+  width: 100%;
+  max-width: 1360px;
 }
 .main-page-container {
   margin-top: 80px;
@@ -22,9 +23,7 @@
     img {
       border: 10px solid $hover-color;
     }
-    p {
-      color: $hover-color;
-    }
+    color: $hover-color;
   }
   img {
     @extend %transition;

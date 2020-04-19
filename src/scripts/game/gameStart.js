@@ -8,7 +8,8 @@ const gameStart = () => {
   const { gameStart } = LS
   button.addEventListener('click', () => {
   if(!mainPage &&
-    !gameStart) 
+    !gameStart && 
+    !button.classList.contains('button-repeat')) 
     {
       saveLS({gameStart : true})
       button.classList.add('button-repeat')

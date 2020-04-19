@@ -1,6 +1,12 @@
-import playAudio from "../secondary-page/playAudio"
+import playAudio from '../secondary-page/playAudio'
 
 const container = document.querySelector('.container')
+
+const toTheMainPage = () => {
+  const link = document.createElement('a')
+  link.href = 'index.html'
+  link.click()
+}
 
 const gameEnd = () => {
   const stars = container.querySelector('.stars')
@@ -19,7 +25,7 @@ const gameEnd = () => {
   const img = document.createElement('img')
   if (!counterErrors) {
     resultText.classList.add('win-text')
-    resultText.innerText = 'Win'
+    resultText.innerText = 'Win!!!'
     img.src = 'assets/img/success.jpg'
     setTimeout(playAudio, 500, 'success')
   }
@@ -28,23 +34,17 @@ const gameEnd = () => {
     resultText.classList.add('lose-text')
     img.src = 'assets/img/failure.jpg'
     if (counterErrors === 1) {
-      resultText.innerText = `${counterErrors} error`
-    } 
+      resultText.innerText = `${counterErrors} error!`
+    }
     if (counterErrors > 1) {
-      resultText.innerText = `${counterErrors} errors`
-    } 
+      resultText.innerText = `${counterErrors} errors!!!`
+    }
     playAudio('failure')
   }
-
+  scrollTo(0, 0)
   result.append(resultText, img)
   main.appendChild(result)
   setTimeout(toTheMainPage, 3000)
-}
-
-const toTheMainPage = () => {
-  const link = document.createElement('a')
-  link.href = 'index.html'
-  link.click()
 }
 
 export default gameEnd

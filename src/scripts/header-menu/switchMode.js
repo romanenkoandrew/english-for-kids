@@ -5,14 +5,13 @@ const switchMode = () => {
   switchModeInput.addEventListener('change', () => {
     if (switchModeInput.checked) {
       saveLS({ gameModeOn: true })
-    } 
+    }
     if (!switchModeInput.checked) {
-      saveLS({ 
+      saveLS({
         gameModeOn: false,
-        gameStart: false,
-       })
+        gameStart: false
+      })
     }
   })
-
 }
 export default switchMode

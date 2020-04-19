@@ -4,12 +4,11 @@ import menuActive from '../header-menu/menuActiveLink'
 import getLS from '../localStorage/getLS'
 import gameModeSecondPage from '../game/gameModeSecondPage'
 import gameModeMainPage from '../game/gameModeMainPage'
-import gameStart from '../game/gameStart'
+import gameStartHandler from '../game/gameStart'
 
 const secondPageCreate = () => {
   document.addEventListener('click', event => {
-    const LS = getLS()
-    const { gameModeOn } = LS
+    const { gameModeOn } = getLS()
     const { target } = event
     if (target.closest('a')) {
       const category = target.closest('a').innerText.trim()
@@ -19,9 +18,10 @@ const secondPageCreate = () => {
           linkIndex = index
         }
       })
+      // eslint-disable-next-line no-new
       new SecondPage(linkIndex)
       menuActive(linkIndex)
-      gameStart()
+      gameStartHandler()
       if (gameModeOn) {
         const switchModeInput = document.getElementById('switch-mode')
         switchModeInput.checked = true

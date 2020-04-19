@@ -19,6 +19,7 @@ class SecondPage {
     stars.classList.add('stars')
     container.appendChild(stars)
     cards[this.index].forEach(el => {
+      // eslint-disable-next-line no-new
       new Card(el)
     })
     const button = document.createElement('button')

@@ -1,9 +1,7 @@
 import getLS from '../localStorage/getLS'
 
 const gameModeMainPage = () => {
-  const LS = getLS()
-  const { gameModeOn } = LS
-  const { mainPage } = LS
+  const { gameModeOn, mainPage } = getLS()
   const verticalColorChange = document.querySelectorAll('.main-card')
 
   const menu = document.getElementById('menu')

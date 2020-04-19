@@ -1,22 +1,20 @@
-import getLS from "../localStorage/getLS"
-import saveLS from "../localStorage/saveLS"
+import getLS from '../localStorage/getLS'
+import saveLS from '../localStorage/saveLS'
 
-const gameStart = () => {
+const gameStartHandler = () => {
   const button = document.querySelector('.button')
-  const LS = getLS()
-  const { mainPage } = LS
-  const { gameStart } = LS
+  const { mainPage, gameStart } = getLS()
   button.addEventListener('click', () => {
-  if(!mainPage &&
-    !gameStart && 
-    !button.classList.contains('button-repeat')) 
-    {
-      saveLS({gameStart : true})
+    if (
+      !mainPage &&
+      !gameStart &&
+      !button.classList.contains('button-repeat')
+    ) {
+      saveLS({ gameStart: true })
       button.classList.add('button-repeat')
       button.innerText = ''
-    } 
+    }
   })
-  
 }
 
-export default gameStart
+export default gameStartHandler

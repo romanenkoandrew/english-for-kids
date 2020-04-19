@@ -1,5 +1,5 @@
-import mainPage from "./mainPage"
-import saveLS from "../localStorage/saveLS"
+import mainPage from './mainPage'
+import saveLS from '../localStorage/saveLS'
 
 const menuActive = option => {
   const menu = document.getElementById('menu')

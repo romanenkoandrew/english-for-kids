@@ -1,18 +1,15 @@
-import getLS from "../localStorage/getLS"
-import { game} from "./gameHandler"
-
+import getLS from '../localStorage/getLS'
+import { game } from './gameHandler'
 
 const gameModeSecondPage = () => {
-  const LS = getLS()
-  const { gameModeOn } = LS
-  const { mainPage } = LS
+  const { gameModeOn, mainPage } = getLS()
   const container = document.querySelector('.container')
   const front = container.querySelectorAll('.front')
   const rotate = container.querySelectorAll('.rotate')
   const cardText = container.querySelectorAll('.card-text')
   const button = container.querySelector('.button')
   const stars = container.querySelector('.stars')
-  
+
   if (gameModeOn && !mainPage) {
     front.forEach(el => {
       el.classList.add('front-game')
@@ -35,12 +32,11 @@ const gameModeSecondPage = () => {
     cardText.forEach(el => {
       el.classList.remove('hidden')
     })
-    button.classList.add('hidden')    
+    button.classList.add('hidden')
     button.classList.remove('button-repeat')
     button.innerText = 'Start game'
 
-    stars.querySelectorAll('img')
-    .forEach(el => el.remove())
+    stars.querySelectorAll('img').forEach(el => el.remove())
 
     container.removeEventListener('click', game)
   }

@@ -1,8 +1,8 @@
-import saveLS from "./saveLS"
+import saveLS from './saveLS'
 
 const defaultLS = () => {
   window.addEventListener('beforeunload', () => {
-    saveLS({ 
+    saveLS({
       gameModeOn: false,
       mainPage: true,
       gameStart: false

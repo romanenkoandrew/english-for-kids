@@ -6,6 +6,7 @@
   padding: 62px 0 0;
 }
 .navigation {
+  margin-left: 10px;
   input {
     position: absolute;
     width: 40px;
@@ -130,6 +131,7 @@
   padding: 3px;
   border-radius: 5px;
   border: 1px #808080 solid;
+  margin-right: 10px;
   cursor: pointer;
     &:hover {
       box-shadow: 0 0 10px rgba(0,0,0,0.5);;

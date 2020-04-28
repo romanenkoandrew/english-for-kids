@@ -6,10 +6,11 @@ const audioTrain = () => {
   // eslint-disable-next-line no-restricted-globals
   const { target } = event
   if (
-    target.parentElement.classList.contains('secondary-card') &&
-    !target.classList.contains('rotate') &&
-    !target.classList.contains('back') &&
-    !gameModeOn
+    (target.parentElement.classList.contains('secondary-card') &&
+      !target.classList.contains('rotate') &&
+      !target.classList.contains('back') &&
+      !gameModeOn) ||
+    target.classList.contains('card-text')
   ) {
     playAudio(target.innerText)
   }

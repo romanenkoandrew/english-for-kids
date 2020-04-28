@@ -2,11 +2,11 @@ import getLS from '../localStorage/getLS'
 
 const gameModeMainPage = () => {
   const { gameModeOn, mainPage, firstTime } = getLS()
-  const verticalColorChange = document.querySelectorAll('.main-card')
+  const verticalColorChangeArr = [...document.querySelectorAll('.main-card')]
 
   const menu = document.getElementById('menu')
   const switchMode = document.getElementById('switchMode')
-  const verticalColorChangeArr = [...verticalColorChange]
+  // const verticalColorChangeArr = [...verticalColorChange]
   const horizontalColorChangeArr = [menu, switchMode]
   if (gameModeOn) {
     horizontalColorChangeArr.forEach(el =>
